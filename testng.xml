@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-    <parameter name="Browser" value="Chrome" />
-    <parameter name="URL" value="https://www.google.com/" />
 
-    <test name="Prueba">
+    <test name="UNI_1">
+        <parameter name="Browser" value="Chrome" />
+        <parameter name="URL" value="https://www.amazon.com/" />
         <classes>
-            <class name="Google.TestGooglePage"/>
+            <class name="test.TestAutoSearchSuggestion"/>
         </classes>
     </test>
 
