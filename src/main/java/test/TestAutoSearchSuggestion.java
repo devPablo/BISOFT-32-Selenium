@@ -32,13 +32,4 @@ public class TestAutoSearchSuggestion extends Helper {
         Thread.sleep(2000);
         assertEquals(homePage.isSearchBarAutoSuggestVisible(), true);
     }
-
-    @Test
-    public void incorrectlyTypedWithAlphanumeric() throws InterruptedException {
-        homePage.clickSearchBar();
-        Thread.sleep(2000);
-        homePage.typeOnSearchBar("Toy *!@");
-        Thread.sleep(2000);
-        assertEquals(homePage.isSearchBarAutoSuggestVisible(), true);
-    }
 }

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BISOFT32-Selenium" />
+        <module name="BISOFT-32-Selenium" />
       </profile>
     </annotationProcessing>
   </component>
