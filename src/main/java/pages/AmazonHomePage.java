@@ -20,6 +20,10 @@ public class AmazonHomePage {
     @CacheLookup
     WebElement searchBarAutoSuggest;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"issDiv0\"]")
+    @CacheLookup
+    WebElement firstSearchBarAutoSuggestOption;
+
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -35,5 +39,9 @@ public class AmazonHomePage {
 
     public boolean isSearchBarAutoSuggestVisible() {
         return !searchBarAutoSuggest.getCssValue("display").equalsIgnoreCase("none");
+    }
+
+    public boolean isFirstSuggestionIdentical(String expected) {
+        return firstSearchBarAutoSuggestOption.getText().equalsIgnoreCase(expected);
     }
 }
