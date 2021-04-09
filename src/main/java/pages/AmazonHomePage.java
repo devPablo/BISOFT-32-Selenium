@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -43,6 +44,14 @@ public class AmazonHomePage {
     @CacheLookup
     WebElement orderByHighestText;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"nav-link-accountList\"]")
+    @CacheLookup
+    WebElement accountMenu;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"nav-flyout-ya-signin\"]/a/span")
+    @CacheLookup
+    WebElement accountMenuSignInButton;
+
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -69,6 +78,11 @@ public class AmazonHomePage {
         orderByHighestButton.click();
     }
 
+    public void hoverAccountMenu(){
+        Actions hover = new Actions(this.driver);
+        hover.moveToElement(accountMenu).build().perform();
+    }
+
     public boolean isSearchBarAutoSuggestVisible() {
         return !searchBarAutoSuggest.getCssValue("display").equalsIgnoreCase("none");
     }
@@ -80,4 +94,9 @@ public class AmazonHomePage {
     public boolean isOrderByHighestPrice() {
         return orderByHighestText.getText().equals("Precio: de más alto a más bajo");
     }
+
+    public boolean isSignButtonOnAccountMenu(){
+        return accountMenuSignInButton != null ? true : false;
+    }
+
 }
