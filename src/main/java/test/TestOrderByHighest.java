@@ -9,10 +9,10 @@ import static org.testng.Assert.assertEquals;
 
 /**
  * @author Sergio Alfaro
- * Test case "UNI_2 - 1" for testing order by lowest price
+ * Test case "UNI_2 - 2" for testing order by highest price
  */
 
-public class TestOrderPrice extends Helper {
+public class TestOrderByHighest extends Helper {
 
     public AmazonHomePage homePage;
 
@@ -29,8 +29,8 @@ public class TestOrderPrice extends Helper {
         Thread.sleep(2000);
         homePage.clickSearchButton();
         Thread.sleep(2000);
-        homePage.orderByLowest();
+        homePage.orderByHighest();
         Thread.sleep(2000);
-        assertEquals(homePage.isOrderByLowestPrice(), true);
+        assertEquals(homePage.isOrderByHighestPrice(), true);
     }
 }

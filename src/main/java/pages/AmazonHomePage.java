@@ -35,6 +35,14 @@ public class AmazonHomePage {
     @CacheLookup
     WebElement orderByLowestText;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"s-result-sort-select_2\"]")
+    @CacheLookup
+    WebElement orderByHighestButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"a-autoid-1-announce\"]/span[2]")
+    @CacheLookup
+    WebElement orderByHighestText;
+
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -55,12 +63,21 @@ public class AmazonHomePage {
         Thread.sleep(2000);
         orderByLowestButton.click();
     }
+    public void orderByHighest() throws InterruptedException {
+        orderByButton.click();
+        Thread.sleep(2000);
+        orderByHighestButton.click();
+    }
 
     public boolean isSearchBarAutoSuggestVisible() {
         return !searchBarAutoSuggest.getCssValue("display").equalsIgnoreCase("none");
     }
 
-    public boolean isOrderByLowestPrince() {
+    public boolean isOrderByLowestPrice() {
         return orderByLowestText.getText().equals("Precio: de más bajo a más alto");
+    }
+
+    public boolean isOrderByHighestPrice() {
+        return orderByHighestText.getText().equals("Precio: de más alto a más bajo");
     }
 }
