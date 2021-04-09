@@ -3,7 +3,7 @@ package framework;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
-public class Helper {
+public class    Helper {
 
     public static WebDriver driver;
     BrowserFactory browserFactory;

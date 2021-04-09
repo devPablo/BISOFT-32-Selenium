@@ -52,6 +52,10 @@ public class AmazonHomePage {
     @CacheLookup
     WebElement accountMenuSignInButton;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"pageContent\"]")
+    @CacheLookup
+    WebElement principalDiv;
+
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -97,6 +101,10 @@ public class AmazonHomePage {
 
     public boolean isSignButtonOnAccountMenu(){
         return accountMenuSignInButton != null ? true : false;
+    }
+
+    public boolean isHomePageLoaded(){
+        return principalDiv != null ? true : false;
     }
 
 }
