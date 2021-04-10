@@ -41,4 +41,10 @@ public class AmazonLoginPage {
         Thread.sleep(1000);
         signinButton.click();
     }
+
+    public void confirmPassword(String password) throws InterruptedException {
+        inputPassword.sendKeys(password);
+        Thread.sleep(1000);
+        signinButton.click();
+    }
 }

@@ -128,5 +128,7 @@ public class AmazonHomePage {
 
     public boolean isSignOutButtonOnAccountMenu(){
         return accountMenuSignOutButton != null;
+    public void goToAccountPage() {
+        accountMenu.click();
     }
 }

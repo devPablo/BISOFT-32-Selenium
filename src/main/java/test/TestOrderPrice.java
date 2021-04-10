@@ -13,7 +13,8 @@ import static org.testng.Assert.assertEquals;
 
 /**
  * @author Sergio Alfaro
- * Test case "UNI_2 - 1" for testing order by lowest price
+ * Caso de prueba "UNI_2 - 1", escenario "Los productos se ordenan de precio menor a mayor"
+ * Caso de prueba "UNI_2 - 2", escenario "Los productos se ordenan de precio mayor a menor"
  */
 
 public class TestOrderPrice extends Helper {
