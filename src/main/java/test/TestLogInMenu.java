@@ -14,7 +14,7 @@ import static org.testng.Assert.assertEquals;
 
 /**
  * @author Sergio Alfaro
- * Test case "HUM_3 - 2" Desplegar menu correctamente cuando existe un usuario logueado
+ * Caso de prueba "HUM_3 - 2", escenario "Desplegar correctamente cuando existe un usuario logueado"
  */
 
 public class TestLogInMenu extends Helper {
