@@ -19,5 +19,28 @@
         </classes>
     </test>
 
+    <test name="HUM_2">
+        <parameter name="Browser" value="Chrome"/>
+        <parameter name="URL" value="https://www.amazon.com/"/>
+        <classes>
+            <class name="test.TestHomePageLoaded"/>
+        </classes>
+    </test>
+
+    <test name="UNI_2">
+        <parameter name="Browser" value="Chrome"/>
+        <parameter name="URL" value="https://www.amazon.com/"/>
+        <classes>
+            <class name="test.TestOrderPrice"/>
+        </classes>
+    </test>
+
+    <test name="HUM_3">
+        <parameter name="Browser" value="Chrome"/>
+        <parameter name="URL" value="https://www.amazon.com/"/>
+        <classes>
+            <class name="test.TestSignInMenu"/>
+        </classes>
+    </test>
 
 </suite>
