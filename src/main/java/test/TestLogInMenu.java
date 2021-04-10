@@ -14,10 +14,10 @@ import static org.testng.Assert.assertEquals;
 
 /**
  * @author Sergio Alfaro
- * Test case "HUM_3 - 1"  Desplegar correctamente cuando no existe un usuario logueado
+ * Test case "HUM_3 - 2" Desplegar menu correctamente cuando existe un usuario logueado
  */
 
-public class TestSignInMenu extends Helper {
+public class TestLogInMenu extends Helper {
 
     public String browser;
     public String url;
@@ -30,11 +30,17 @@ public class TestSignInMenu extends Helper {
     }
 
     @Test
-    public void signInOption() throws InterruptedException {
+    public void logInOption() throws InterruptedException {
         WebDriver driver = new BrowserFactory().getDriver(browser, url);
+        AmazonLoginPage loginPage = new AmazonLoginPage(driver);
+
+        loginPage.login("email.internet.test@gmail.com", "AmazonPassword1!");
+
         AmazonHomePage homePage = new AmazonHomePage(driver);
+
         homePage.hoverAccountMenu();
         Thread.sleep(2000);
-        assertEquals(homePage.isSignOnButtonAccountMenu(), true);
+        assertEquals(homePage.isSignOutButtonOnAccountMenu() && !homePage.isSignOnButtonAccountMenu(), true);
     }
+
 }

@@ -63,6 +63,10 @@ public class AmazonHomePage {
     @CacheLookup
     WebElement chooseLanguageButton;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"nav-item-signoutt\"]/span")
+    @CacheLookup
+    WebElement accountMenuSignOutButton;
+
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -106,7 +110,7 @@ public class AmazonHomePage {
         return orderByHighestText.getText().equals("Price: High to Low");
     }
 
-    public boolean isSignButtonOnAccountMenu(){
+    public boolean isSignOnButtonAccountMenu(){
         return accountMenuSignInButton != null;
     }
 
@@ -120,5 +124,9 @@ public class AmazonHomePage {
 
     public void goToLanguageSettings() {
         chooseLanguageButton.click();
+    }
+
+    public boolean isSignOutButtonOnAccountMenu(){
+        return accountMenuSignOutButton != null;
     }
 }
