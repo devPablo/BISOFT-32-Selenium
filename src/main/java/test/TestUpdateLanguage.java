@@ -12,6 +12,12 @@ import pages.AmazonLoginPage;
 
 import static org.testng.Assert.assertEquals;
 
+/**
+ * @author Pablo Bonilla
+ * Caso de prueba "FUN_2 - 1", escenario "Verificar que la página efectivamente cambie de idioma al seleccionar uno prestablecido, y se envíe un correo informativo al usuario"
+ * Caso de prueba "FUN_2 - 2", escenario "Verificar que la página no cambie de idioma al seleccionar uno prestablecido ya previamente seleccionado, y no se envíe un correo informativo al usuario"
+ */
+
 public class TestUpdateLanguage {
 
     public String browser;

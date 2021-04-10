@@ -13,7 +13,8 @@ import static org.testng.Assert.assertEquals;
 
 /**
  * @author Sergio Alfaro
- * Test case "HUM_2 - 1" for testing order by lowest price
+ * Caso de prueba "HUM_2 - 1", escenario "El landing page carga correctamente"
+ * Caso de prueba "HUM_2 - 2", escenario "El landing page carga pero no muestra contenido multimedia"
  */
 
 public class TestHomePageLoaded extends Helper {

@@ -13,7 +13,8 @@ import static org.testng.Assert.assertEquals;
 
 /**
  * @author Sergio Alfaro
- * Test case "HUM_3 - 1" for testing order by lowest price
+ * Caso de prueba "HUM_3 - 1", escenario "Desplegar correctamente cuando no existe un usuario logueado"
+ * Caso de prueba "HUM_3 - 2", escenario "Desplegar correctamente cuando existe un usuario logueado"
  */
 
 public class TestSignInMenu extends Helper {
