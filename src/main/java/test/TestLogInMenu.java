@@ -40,7 +40,7 @@ public class TestLogInMenu extends Helper {
 
         homePage.hoverAccountMenu();
         Thread.sleep(2000);
-        assertEquals(homePage.isSignOutButtonOnAccountMenu() && !homePage.isSignOnButtonAccountMenu(), true);
+        assertEquals(homePage.isSignOutButtonOnAccountMenu(), true);
     }
 
 }

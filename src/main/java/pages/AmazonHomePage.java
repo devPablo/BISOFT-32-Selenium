@@ -63,7 +63,7 @@ public class AmazonHomePage {
     @CacheLookup
     WebElement chooseLanguageButton;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"nav-item-signoutt\"]/span")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"nav-item-signout\"]")
     @CacheLookup
     WebElement accountMenuSignOutButton;
 
