@@ -121,4 +121,8 @@ public class AmazonHomePage {
     public void goToLanguageSettings() {
         chooseLanguageButton.click();
     }
+
+    public void goToAccountPage() {
+        accountMenu.click();
+    }
 }
