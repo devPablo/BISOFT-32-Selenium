@@ -2,7 +2,9 @@ package framework;
 
 public enum LanguageEnum {
     ENGLISH("en_US"),
-    SPANISH("es_US");
+    SPANISH("es_US"),
+    PORTUGUESE("pt_BR"),
+    CHINESE("zh_CN");
 
     private String element;
 
