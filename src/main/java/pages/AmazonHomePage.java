@@ -80,20 +80,23 @@ public class AmazonHomePage {
         searchBar.sendKeys(text);
     }
 
-    public void clickSearchButton() { searchButton.click();}
+    public void clickSearchButton() {
+        searchButton.click();
+    }
 
     public void orderByLowest() throws InterruptedException {
         orderByButton.click();
         Thread.sleep(2000);
         orderByLowestButton.click();
     }
+
     public void orderByHighest() throws InterruptedException {
         orderByButton.click();
         Thread.sleep(2000);
         orderByHighestButton.click();
     }
 
-    public void hoverAccountMenu(){
+    public void hoverAccountMenu() {
         Actions hover = new Actions(this.driver);
         hover.moveToElement(accountMenu).build().perform();
     }
@@ -110,11 +113,11 @@ public class AmazonHomePage {
         return orderByHighestText.getText().equals("Price: High to Low");
     }
 
-    public boolean isSignOnButtonAccountMenu(){
+    public boolean isSignOnButtonAccountMenu() {
         return accountMenuSignInButton != null;
     }
 
-    public boolean isHomePageLoaded(){
+    public boolean isHomePageLoaded() {
         return principalDiv != null;
     }
 
@@ -126,13 +129,15 @@ public class AmazonHomePage {
         chooseLanguageButton.click();
     }
 
-    public boolean isSignOutButtonOnAccountMenu(){
+    public boolean isSignOutButtonOnAccountMenu() {
         return accountMenuSignOutButton != null;
+    }
+
     public void goToAccountPage() {
         accountMenu.click();
     }
 
-    public boolean isLogedIn() throws InterruptedException {
+    public boolean isLogedIn() {
         return driver.getTitle().equalsIgnoreCase("Your Amazon.com");
     }
 }
