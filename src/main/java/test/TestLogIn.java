@@ -13,7 +13,7 @@ import pages.AmazonLoginPage;
 import static org.testng.Assert.*;
 
 /**
- * @author Pablo Bonilla
+ * @author Daniel Herrera
  * Caso de prueba "FUN_1 - 1", escenario "Verificar que el usuario puede iniciar sesión exitosamente a partir del correo electrónico y la contraseña"
  * Caso de prueba "FUN_1 - 2", escenario "Verificar que el usuario no puede iniciar sesión exitosamente a partir del correo electrónico y una contraseña incorrecta"
  */
