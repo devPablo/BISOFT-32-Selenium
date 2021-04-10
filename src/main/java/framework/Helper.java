@@ -2,7 +2,7 @@ package framework;
 
 import org.openqa.selenium.WebElement;
 
-public class    Helper {
+public class Helper {
 
     public static boolean elementHasClass(WebElement element, String className) {
         String classes = element.getAttribute("class");
