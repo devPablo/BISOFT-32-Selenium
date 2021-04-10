@@ -27,6 +27,10 @@ public class AmazonLoginPage {
     @CacheLookup
     WebElement signinButton;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"auth-error-message-box\"]/div/h4")
+    @CacheLookup
+    WebElement errorMessageBox;
+
     public AmazonLoginPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -47,4 +51,10 @@ public class AmazonLoginPage {
         Thread.sleep(1000);
         signinButton.click();
     }
+
+    public boolean isPasswordCorrect() throws  InterruptedException {
+        Thread.sleep(2000);
+        return !errorMessageBox.getText().equalsIgnoreCase("There was a problem");
+    }
+
 }

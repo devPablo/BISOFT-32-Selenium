@@ -3,52 +3,76 @@
 <suite name="Suite" parallel="methods" thread-count="10">
 
 
-    <test name="UNI_1">
-        <parameter name="Browser" value="Chrome"/>
-        <parameter name="URL" value="https://www.amazon.com/"/>
-        <classes>
-            <class name="test.TestSearchBarAutoSuggestion"/>
-        </classes>
-    </test>
+<!--    <test name="UNI_1">-->
+<!--        <parameter name="Browser" value="Chrome"/>-->
+<!--        <parameter name="URL" value="https://www.amazon.com/"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestSearchBarAutoSuggestion"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="FUN_2">
+<!--    <test name="FUN_2">-->
+<!--        <parameter name="Browser" value="Chrome"/>-->
+<!--        <parameter name="URL" value="https://www.amazon.com/ap/signin?_encoding=UTF8&amp;openid.assoc_handle=usflex&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;openid.pape.max_auth_age=0&amp;openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav_AccountFlyout_signout%26signIn%3D1%26useRedirectOnSuccess%3D1"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestUpdateLanguage"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="HUM_1">-->
+<!--        <parameter name="Browser" value="Chrome"/>-->
+<!--        <parameter name="URL" value="https://www.amazon.com/ap/signin?_encoding=UTF8&amp;openid.assoc_handle=usflex&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;openid.pape.max_auth_age=0&amp;openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav_AccountFlyout_signout%26signIn%3D1%26useRedirectOnSuccess%3D1"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestChangeLanguage"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="REG_3">-->
+<!--        <parameter name="Browser" value="Chrome"/>-->
+<!--        <parameter name="URL" value="https://www.amazon.com/ap/register?showRememberMe=true&amp;openid.pape.max_auth_age=0&amp;openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Flanguage%3Den_US%26ref_%3Dnav_ya_signin&amp;prevRID=6ETXW9YV5FZBCDVQ396V&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=usflex&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;pageId=usflex&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestSignIn"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="FUN_1">
         <parameter name="Browser" value="Chrome"/>
         <parameter name="URL" value="https://www.amazon.com/ap/signin?_encoding=UTF8&amp;openid.assoc_handle=usflex&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;openid.pape.max_auth_age=0&amp;openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav_AccountFlyout_signout%26signIn%3D1%26useRedirectOnSuccess%3D1"/>
         <classes>
-            <class name="test.TestUpdateLanguage"/>
+            <class name="test.TestLogIn"/>
         </classes>
     </test>
 
-    <test name="HUM_2">
-        <parameter name="Browser" value="Chrome"/>
-        <parameter name="URL" value="https://www.amazon.com/"/>
-        <classes>
-            <class name="test.TestHomePageLoaded"/>
-        </classes>
-    </test>
+<!--    <test name="HUM_2">-->
+<!--        <parameter name="Browser" value="Chrome"/>-->
+<!--        <parameter name="URL" value="https://www.amazon.com/"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestHomePageLoaded"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="UNI_2">
-        <parameter name="Browser" value="Chrome"/>
-        <parameter name="URL" value="https://www.amazon.com/"/>
-        <classes>
-            <class name="test.TestOrderPrice"/>
-        </classes>
-    </test>
+<!--    <test name="UNI_2">-->
+<!--        <parameter name="Browser" value="Chrome"/>-->
+<!--        <parameter name="URL" value="https://www.amazon.com/"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestOrderPrice"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="HUM_3">
-        <parameter name="Browser" value="Chrome"/>
-        <parameter name="URL" value="https://www.amazon.com/"/>
-        <classes>
-            <class name="test.TestSignInMenu"/>
-        </classes>
-    </test>
+<!--    <test name="HUM_3">-->
+<!--        <parameter name="Browser" value="Chrome"/>-->
+<!--        <parameter name="URL" value="https://www.amazon.com/"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestSignInMenu"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="FUN_3">
-        <parameter name="Browser" value="Chrome"/>
-        <parameter name="URL" value="https://www.amazon.com/ap/signin?_encoding=UTF8&amp;openid.assoc_handle=usflex&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;openid.pape.max_auth_age=0&amp;openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav_AccountFlyout_signout%26signIn%3D1%26useRedirectOnSuccess%3D1"/>
-        <classes>
-            <class name="test.TestAddPaymentCard"/>
-        </classes>
-    </test>
+<!--    <test name="FUN_3">-->
+<!--        <parameter name="Browser" value="Chrome"/>-->
+<!--        <parameter name="URL" value="https://www.amazon.com/ap/signin?_encoding=UTF8&amp;openid.assoc_handle=usflex&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;openid.pape.max_auth_age=0&amp;openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav_AccountFlyout_signout%26signIn%3D1%26useRedirectOnSuccess%3D1"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestAddPaymentCard"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>

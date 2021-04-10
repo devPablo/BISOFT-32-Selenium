@@ -125,4 +125,8 @@ public class AmazonHomePage {
     public void goToAccountPage() {
         accountMenu.click();
     }
+
+    public boolean isLogedIn() throws InterruptedException {
+        return driver.getTitle().equalsIgnoreCase("Your Amazon.com");
+    }
 }
