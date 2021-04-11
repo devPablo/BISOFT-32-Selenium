@@ -39,5 +39,6 @@ public class TestSignIn extends Helper {
         boolean isPasswordMismatch = signInPage.isPasswordMismatch();
 
         assertEquals(isPasswordMismatch, true);
+        driver.close();
     }
 }

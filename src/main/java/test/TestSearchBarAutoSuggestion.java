@@ -38,6 +38,7 @@ public class TestSearchBarAutoSuggestion {
         homePage.typeOnSearchBar(searchText);
         Thread.sleep(3000);
         assertEquals(homePage.isSearchBarAutoSuggestVisible(), true);
+        driver.close();
     }
 
     @Test
@@ -52,5 +53,6 @@ public class TestSearchBarAutoSuggestion {
         Thread.sleep(3000);
         boolean isSearchIdentical = homePage.isFirstSuggestionIdentical(searchText);
         assertEquals(isSearchIdentical, false);
+        driver.close();
     }
 }

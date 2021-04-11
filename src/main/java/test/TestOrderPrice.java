@@ -42,6 +42,7 @@ public class TestOrderPrice extends Helper {
         homePage.orderByLowest();
         Thread.sleep(2000);
         assertEquals(homePage.isOrderByLowestPrice(), true);
+        driver.close();
     }
 
     @Test
@@ -57,5 +58,6 @@ public class TestOrderPrice extends Helper {
         homePage.orderByHighest();
         Thread.sleep(2000);
         assertEquals(homePage.isOrderByHighestPrice(), true);
+        driver.close();
     }
 }

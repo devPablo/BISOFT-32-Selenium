@@ -11,7 +11,7 @@ public class AmazonYourPaymentsPage {
 
     WebDriver driver;
 
-    @FindBy(how = How.XPATH, using = "/html/body/div[1]/div[2]/div[4]/div/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/span/span[1]/span/input")
+    @FindBy(how = How.XPATH, using = "/html/body/div[1]/div[2]/div[4]/div/div/div[2]/div/div/div[3]/div/div[2]/div/div[2]/div/div/span/span[1]/span/input")
     @CacheLookup
     WebElement addADebitOrCreditCardButton;
 

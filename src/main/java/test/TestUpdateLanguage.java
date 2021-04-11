@@ -55,6 +55,7 @@ public class TestUpdateLanguage {
         boolean isLanguageSelected = languageSettingsPage.isLanguageSelected(LanguageEnum.ENGLISH);
 
         assertEquals(isLanguageSelected, true);
+        driver.close();
     }
 
     @Test
@@ -82,5 +83,6 @@ public class TestUpdateLanguage {
         boolean isLanguageSelected = languageSettingsPage.isLanguageSelected(LanguageEnum.SPANISH);
 
         assertEquals(isLanguageSelected, true);
+        driver.close();
     }
 }

@@ -42,6 +42,7 @@ public class TestAddPaymentCard {
         Thread.sleep(1000);
         yourPaymentsPage.openAddCardModal();
         Thread.sleep(3000);
+        driver.close();
 
         /* Amazon blocks direct interaction by injecting an inaccessible HTML document (payment security method)
 
@@ -77,6 +78,7 @@ public class TestAddPaymentCard {
         Thread.sleep(1000);
         yourPaymentsPage.openAddCardModal();
         Thread.sleep(3000);
+        driver.close();
 
         /* Amazon blocks direct interaction by injecting an inaccessible HTML document (payment security method)
 

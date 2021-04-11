@@ -64,8 +64,8 @@ public class TestChangeLanguage {
         languageSettingsPage = new AmazonLanguageSettingsPage(driver);
         boolean isLanguageSelected = languageSettingsPage.isLanguageSelected(LanguageEnum.PORTUGUESE);
 
-        driver.close();
         assertEquals(isLanguageSelected, true);
+        driver.close();
     }
 
     @Test
@@ -102,7 +102,7 @@ public class TestChangeLanguage {
         languageSettingsPage = new AmazonLanguageSettingsPage(driver);
         boolean isLanguageSelected = languageSettingsPage.isLanguageSelected(LanguageEnum.CHINESE);
 
-        driver.close();
         assertEquals(isLanguageSelected, true);
+        driver.close();
     }
 }

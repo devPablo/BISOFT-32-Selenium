@@ -34,6 +34,7 @@ public class TestHomePageLoaded extends Helper {
         WebDriver driver = new BrowserFactory().getDriver(browser, url);
         AmazonHomePage homePage = new AmazonHomePage(driver);
         assertEquals(driver.getCurrentUrl().equals("https://www.amazon.com/") && homePage != null && homePage.isHomePageLoaded(), true);
+        driver.close();
     }
 
     @Test
@@ -41,5 +42,6 @@ public class TestHomePageLoaded extends Helper {
         WebDriver driver = new BrowserFactory().getDriver(browser, url);
         AmazonHomePage homePage = new AmazonHomePage(driver);
         assertEquals(homePage.isHomePageLoaded(), false);
+        driver.close();
     }
 }

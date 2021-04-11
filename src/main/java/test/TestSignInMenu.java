@@ -36,5 +36,6 @@ public class TestSignInMenu extends Helper {
         homePage.hoverAccountMenu();
         Thread.sleep(2000);
         assertEquals(homePage.isSignOnButtonAccountMenu(), true);
+        driver.close();
     }
 }

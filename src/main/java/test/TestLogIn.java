@@ -41,6 +41,7 @@ public class TestLogIn {
         boolean successfulLogIn = homePage.isLogedIn();
 
         assertTrue(successfulLogIn);
+        driver.close();
     }
 
     @Test
@@ -53,5 +54,6 @@ public class TestLogIn {
         boolean isPasswordCorrect = loginPage.isPasswordCorrect();
 
         assertFalse(isPasswordCorrect);
+        driver.close();
     }
 }
