@@ -15,6 +15,10 @@ public class AmazonAccountPage {
     @CacheLookup
     WebElement yourPaymentsButton;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"a-page\"]/div[2]/div/div[2]/div[2]/a")
+    @CacheLookup
+    WebElement loginAndSecurityButton;
+
     public AmazonAccountPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -22,5 +26,9 @@ public class AmazonAccountPage {
 
     public void goToYourPayments() {
         yourPaymentsButton.click();
+    }
+
+    public void goToLoginAndSecurity(){
+        loginAndSecurityButton.click();
     }
 }
