@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import static org.testng.Assert.assertEquals;
+
 public class AmazonHomePage {
 
     WebDriver driver;
@@ -55,6 +57,7 @@ public class AmazonHomePage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"pageContent\"]")
     @CacheLookup
     WebElement principalDiv;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"issDiv0\"]")
     @CacheLookup
     WebElement firstSearchBarAutoSuggestOption;
@@ -66,6 +69,42 @@ public class AmazonHomePage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"nav-item-signout\"]")
     @CacheLookup
     WebElement accountMenuSignOutButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"nav-search-dropdown-card\"]")
+    @CacheLookup
+    WebElement dropdownSearchBar;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"searchDropdownBox\"]/option[10]")
+    @CacheLookup
+    WebElement kindleStoreOption;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[1]/div/span/div/div/div[2]/h2/a")
+    @CacheLookup
+    WebElement book;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"a-autoid-0\"]/span")
+    @CacheLookup
+    WebElement selectKindleVersion;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"one-click-button\"]")
+    @CacheLookup
+    WebElement buyOneClickOption;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"place-order-button\"]")
+    @CacheLookup
+    WebElement placeYourOrder;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"a-autoid-2\"]/span")
+    @CacheLookup
+    WebElement selectPhysicalVersion;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"submit.buy-now\"]/span")
+    @CacheLookup
+    WebElement buyNowOption;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div[5]/div[2]/div[1]/h1")
+    @CacheLookup
+    WebElement shippingText;
 
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
@@ -139,5 +178,39 @@ public class AmazonHomePage {
 
     public boolean isLogedIn() {
         return driver.getTitle().equalsIgnoreCase("Your Amazon.com");
+    }
+
+    public void searchEbook(String bookName) throws InterruptedException {
+        Thread.sleep(2000);
+        dropdownSearchBar.click();
+        Thread.sleep(2000);
+        kindleStoreOption.click();
+        typeOnSearchBar(bookName);
+        Thread.sleep(2000);
+        clickSearchButton();
+        Thread.sleep(2000);
+        book.click();
+    }
+
+    public String getPlaceYourOrderText() {
+        return placeYourOrder.getText();
+    }
+
+    public void buyEbook() throws InterruptedException {
+        selectKindleVersion.click();
+        Thread.sleep(2000);
+        buyOneClickOption.click();
+        Thread.sleep(2000);
+    }
+
+    public void buyBook() throws InterruptedException {
+        selectPhysicalVersion.click();
+        Thread.sleep(2000);
+        buyNowOption.click();
+        Thread.sleep(2000);
+    }
+
+    public String getShippingText(){
+        return shippingText.getText();
     }
 }
