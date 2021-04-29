@@ -300,15 +300,15 @@ public class AmazonHomePage {
         return emptyCardH2Element.getText();
     }
 
-    public void searchProductPriceFilter(String product, int minPrice, int maxPrice) throws InterruptedException {
+    public void searchProductPriceFilter(String product, String minPrice, String maxPrice) throws InterruptedException {
         Thread.sleep(2000);
         typeOnSearchBar(product);
         Thread.sleep(2000);
         clickSearchButton();
         Thread.sleep(2000);
-        minPriceFilterInput.sendKeys(String.valueOf(minPrice));
+        minPriceFilterInput.sendKeys(minPrice);
         Thread.sleep(1000);
-        maxPriceFilterInput.sendKeys(String.valueOf(maxPrice));
+        maxPriceFilterInput.sendKeys(maxPrice);
         Thread.sleep(2000);
         goPriceFilterButton.click();
     }

@@ -32,20 +32,31 @@ public class TestPriceFilter {
         WebDriver driver = new BrowserFactory().getDriver(browser, url);
         AmazonHomePage homePage = new AmazonHomePage(driver);
 
-        int minPrice = 50;
-        int maxPrice = 100;
+        String minPrice = "50";
+        String maxPrice = "100";
         homePage.searchProductPriceFilter("nintendo", minPrice, maxPrice);
         Thread.sleep(2000);
         int productPrice = homePage.getPriceProductListed(0);
         boolean isValidPriceFilter = false;
-        if (productPrice >= minPrice && productPrice <= maxPrice) {
+        if (productPrice >= Integer.parseInt(minPrice) && productPrice <= Integer.parseInt(maxPrice)) {
             isValidPriceFilter = true;
         }
         assertEquals(isValidPriceFilter, true);
         driver.close();
     }
 
-//    @Test
-//    public void filterPriceString() throws InterruptedException {
-//    }
+    @Test
+    public void filterPriceString() throws InterruptedException {
+        WebDriver driver = new BrowserFactory().getDriver(browser, url);
+        AmazonHomePage homePage = new AmazonHomePage(driver);
+
+        String minPrice = "Abc";
+        String maxPrice = "Xyz";
+        homePage.searchProductPriceFilter("nintendo", minPrice, maxPrice);
+        Thread.sleep(2000);
+        int productPrice = homePage.getPriceProductListed(0);
+        boolean isValidPriceFilter = false;
+        assertEquals(isValidPriceFilter, false);
+        driver.close();
+    }
 }
