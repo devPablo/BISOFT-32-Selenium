@@ -106,6 +106,26 @@ public class AmazonHomePage {
     @CacheLookup
     WebElement shippingText;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[3]/div/span/div/div/div/div/div[2]/h2/a")
+    @CacheLookup
+    WebElement selectedToy;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"add-to-cart-button\"]")
+    @CacheLookup
+    WebElement addToCartButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"hlb-view-cart-announce\"]")
+    @CacheLookup
+    WebElement cartButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@value=\"Delete\"]")
+    @CacheLookup
+    WebElement deleteFromCartButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"sc-active-cart\"]/div/div/div[2]/div[1]/h2")
+    @CacheLookup
+    WebElement emptyCardH2Element;
+
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -210,7 +230,27 @@ public class AmazonHomePage {
         Thread.sleep(2000);
     }
 
-    public String getShippingText(){
+    public String getShippingText() {
         return shippingText.getText();
+    }
+
+    public void searchToy(String toyName) throws InterruptedException {
+        Thread.sleep(2000);
+        typeOnSearchBar(toyName);
+        Thread.sleep(2000);
+        clickSearchButton();
+        Thread.sleep(2000);
+        selectedToy.click();
+        Thread.sleep(2000);
+        addToCartButton.click();
+        Thread.sleep(2000);
+        cartButton.click();
+        Thread.sleep(2000);
+        deleteFromCartButton.click();
+        Thread.sleep(2000);
+    }
+
+    public String getEmptyCardText() {
+        return emptyCardH2Element.getText();
     }
 }
