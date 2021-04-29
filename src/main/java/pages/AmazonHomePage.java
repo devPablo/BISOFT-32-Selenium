@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 import static org.testng.Assert.assertEquals;
 
 public class AmazonHomePage {
@@ -133,6 +135,22 @@ public class AmazonHomePage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"quantity\"]")
     @CacheLookup
     WebElement quantitySelectNumber;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"low-price\"]")
+    @CacheLookup
+    WebElement minPriceFilterInput;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"high-price\"]")
+    @CacheLookup
+    WebElement maxPriceFilterInput;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"a-autoid-1\"]/span/input")
+    @CacheLookup
+    WebElement goPriceFilterButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@class=\"a-price-whole\"]")
+    @CacheLookup
+    List<WebElement> productList;
 
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
@@ -280,5 +298,22 @@ public class AmazonHomePage {
 
     public String getEmptyCardText() {
         return emptyCardH2Element.getText();
+    }
+
+    public void searchProductPriceFilter(String product, int minPrice, int maxPrice) throws InterruptedException {
+        Thread.sleep(2000);
+        typeOnSearchBar(product);
+        Thread.sleep(2000);
+        clickSearchButton();
+        Thread.sleep(2000);
+        minPriceFilterInput.sendKeys(String.valueOf(minPrice));
+        Thread.sleep(1000);
+        maxPriceFilterInput.sendKeys(String.valueOf(maxPrice));
+        Thread.sleep(2000);
+        goPriceFilterButton.click();
+    }
+
+    public int getPriceProductListed(int productNumber) {
+        return Integer.parseInt(productList.get(productNumber).getText().replaceAll("[^\\d.]", ""));
     }
 }
