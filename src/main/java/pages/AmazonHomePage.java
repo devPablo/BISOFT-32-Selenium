@@ -126,6 +126,14 @@ public class AmazonHomePage {
     @CacheLookup
     WebElement emptyCardH2Element;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"a-autoid-0-announce\"]")
+    @CacheLookup
+    WebElement quantitySelect;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"quantity\"]")
+    @CacheLookup
+    WebElement quantitySelectNumber;
+
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -241,6 +249,26 @@ public class AmazonHomePage {
         clickSearchButton();
         Thread.sleep(2000);
         selectedToy.click();
+        Thread.sleep(2000);
+        addToCartButton.click();
+        Thread.sleep(2000);
+        cartButton.click();
+        Thread.sleep(2000);
+        deleteFromCartButton.click();
+        Thread.sleep(2000);
+    }
+
+    public void searchToyWithQuantity(String toyName, int quantity) throws InterruptedException {
+        Thread.sleep(2000);
+        typeOnSearchBar(toyName);
+        Thread.sleep(2000);
+        clickSearchButton();
+        Thread.sleep(2000);
+        selectedToy.click();
+        Thread.sleep(2000);
+        quantitySelect.click();
+        Thread.sleep(1000);
+        quantitySelectNumber.sendKeys(String.valueOf(quantity));
         Thread.sleep(2000);
         addToCartButton.click();
         Thread.sleep(2000);
