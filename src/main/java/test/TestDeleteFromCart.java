@@ -38,8 +38,14 @@ public class TestDeleteFromCart {
         driver.close();
     }
 
-//    @Test
-//    public void deleteOneOfMultipleOfSameItemFromCart() throws InterruptedException {
-//
-//    }
+    @Test
+    public void deleteOneOfMultipleOfSameItemFromCart() throws InterruptedException {
+        WebDriver driver = new BrowserFactory().getDriver(browser, url);
+        AmazonHomePage homePage = new AmazonHomePage(driver);
+
+        homePage.searchToyWithQuantity("ilife tech modeling clay", 5);
+        boolean isCartEmpty = homePage.getEmptyCardText().toLowerCase().contains("Your Amazon Cart is empty".toLowerCase());
+        assertEquals(isCartEmpty, true);
+        driver.close();
+    }
 }
